@@ -1,0 +1,36 @@
+buttons
+https://opengameart.org/content/beep-tone-sound-sfx
+https://opengameart.org/content/forward-button-press-ui-sound
+https://opengameart.org/content/backwards-button-press-ui-sound
+
+apple sprite
+https://opengameart.org/content/apple-3
+
+grass tile
+https://opengameart.org/content/grass-tile-0
+
+cyborg grow sound
+https://freesound.org/people/ShahruhAudio/sounds/336882/
+
+victory sound
+https://freesound.org/people/Sheyvan/sounds/470083/
+
+loss sound
+https://opengameart.org/content/evil-cyber-laugh
+
+draw sound
+https://www.voicy.network/clips/cdqjQQHcUE_CuPLdZuB49Q
+
+snake hissing
+https://freesound.org/people/schreibsel/sounds/540162/
+
+
+grass rustles
+https://freesound.org/people/morganpurkis/sounds/396016/
+https://freesound.org/people/morganpurkis/sounds/396012/
+https://freesound.org/people/morganpurkis/sounds/396013/
+https://freesound.org/people/morganpurkis/sounds/396014/
+
+remaining textures were made by me
+Ojjas Tyagi
+CS20BTECH11060

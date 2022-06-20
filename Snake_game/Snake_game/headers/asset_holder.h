@@ -1,0 +1,146 @@
+#ifndef ASSET_HOLDER_H
+#define ASSET_HOLDER_H
+
+class asset_holder
+{
+public:
+	enum TEXTURE_ID{APPLE,ORGANIC_SNAKE,CYBORG_SNAKE,GRASS,WALL};
+	enum SOUND_ID{ FORWARD_BUTTON, BACKWARD_BUTTON, BUTTON_CHANGE,CYBORG_GROW,SNAKE_GROW,WIN,DRAW,LOSS,GRASS_SOUND1,GRASS_SOUND2,GRASS_SOUND3,GRASS_SOUND4 };
+
+	////////////////////////////////////////////////////////////
+	/// \brief constructor
+	///
+	////////////////////////////////////////////////////////////
+	asset_holder();
+
+	////////////////////////////////////////////////////////////
+	/// \brief destructor
+	///
+	////////////////////////////////////////////////////////////
+	~asset_holder();
+
+	////////////////////////////////////////////////////////////
+	/// \brief adds texture to assets
+	///
+	/// \param _id unique id of texture
+	/// \param filepath path to file where texture present 
+	/// \param setrepeated decides whether texture can be repeated
+	///
+	////////////////////////////////////////////////////////////
+	void add_texture(int id, const std::string& filepath,bool setrepeated=false);
+
+	////////////////////////////////////////////////////////////
+	/// \brief adds font to assets
+	///
+	/// \param _id unique id of font
+	/// \param filepath path to file where font present 
+	///
+	////////////////////////////////////////////////////////////
+	void add_font(int id, const std::string& filepath);
+
+	////////////////////////////////////////////////////////////
+	/// \brief adds sound buffer to assets
+	///
+	/// \param _id unique id of sound buffer
+	/// \param filepath path to file where sound buffer present 
+	///
+	////////////////////////////////////////////////////////////
+	void add_sound_buffer(int id, const std::string& filepath);
+	
+	////////////////////////////////////////////////////////////
+	/// \brief deletes sf::sound objects which are
+	/// finished playing
+	///
+	////////////////////////////////////////////////////////////
+	void clear_sounds();
+
+	////////////////////////////////////////////////////////////
+	/// \brief plays a sound 
+	///
+	/// \param id unique id of texture
+	///
+	/// takes key to a sound buffer already present and
+	/// creates a sf::sound object which uses it and plays the 
+	/// sound object 
+	///
+	////////////////////////////////////////////////////////////
+	void play_sound(int id,float volume=100.f);
+
+	////////////////////////////////////////////////////////////
+	/// \brief gets specified texture
+	///
+	/// \param id unique id of texture
+	///
+	/// \return lvalue reference to given texture
+	///
+	////////////////////////////////////////////////////////////
+    sf::Texture& get_texture( int id)  ;
+
+	////////////////////////////////////////////////////////////
+	/// \brief gets specified texture
+	///
+	/// \param id unique id of font
+	///
+	/// \return lvalue reference to given font
+	///
+	////////////////////////////////////////////////////////////
+	sf::Font& get_font(int id);
+
+	////////////////////////////////////////////////////////////
+	/// \brief gets specified soundbuffer
+	///
+	/// \param id unique id of soundbuffer
+	///
+	/// \return lvalue reference to given soundbuffer
+	///
+	////////////////////////////////////////////////////////////
+	sf::SoundBuffer& get_soundbuffer( int id);
+
+private:
+	////////////////////////////////////////////////////////////
+	/// \brief list of sounds 
+	///
+	////////////////////////////////////////////////////////////
+	std::list<sf::Sound> m_sounds;
+
+	////////////////////////////////////////////////////////////
+	/// \brief map of textures 
+	///
+	/// map which takes a id assigned to texture key and
+	/// maps it to unique ptr of sf::Texture type
+	///
+	////////////////////////////////////////////////////////////
+	std::map<int, std::unique_ptr<sf::Texture>> m_textures;
+
+	////////////////////////////////////////////////////////////
+	/// \brief map of fonts
+	///
+	/// map which takes a id assigned to font key and
+	/// maps it to unique ptr of sf::Font type
+	///
+	////////////////////////////////////////////////////////////
+	std::map<int, std::unique_ptr<sf::Font>> m_fonts;
+
+	////////////////////////////////////////////////////////////
+	/// \brief map of soundbuffers 
+    ///
+	/// map which takes a id assigned to soundbuffer key and
+	/// maps it to unique ptr of sf::Soundbuffer type
+	///
+	////////////////////////////////////////////////////////////
+	std::map<int, std::unique_ptr<sf::SoundBuffer>> m_soundbuffers; 
+
+	////////////////////////////////////////////////////////////
+	/// \struct
+	/// \brief cotains () operator to be used as predicate
+	/// to use remove_if statement with list of sounds
+	////////////////////////////////////////////////////////////
+	struct is_finished {
+		bool operator() (const sf::Sound& value) {
+			if (value.getStatus() == sf::SoundSource::Status::Playing) { return false; }
+			return true;
+		}
+	};
+};
+
+#endif

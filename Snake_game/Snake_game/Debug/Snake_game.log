@@ -1,0 +1,43 @@
+﻿  ai_snake.cpp
+  asset_holder.cpp
+  context.cpp
+  endgame.cpp
+  game.cpp
+  gameplay.cpp
+C:\Users\Ojjas\Desktop\SFML environment\Snake_game\Snake_game\Src\gameplay.cpp(59,16): warning C4552: '%': result of expression not used
+D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(714,47): warning C4244: 'initializing': conversion from '_Ty' to '_Objty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+          and
+          [
+              _Objty=int
+          ]
+D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(721): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float>(_Alloc &,_Objty *const ,float &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<int>,
+              _Ty=int,
+              _Objty=int
+          ]
+D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(726): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float>(_Alloc &,_Objty *const ,float &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<int>,
+              _Ty=int,
+              _Objty=int
+          ]
+D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(739): message : see reference to function template instantiation 'void std::vector<int,std::allocator<int>>::_Emplace_back_with_unused_capacity<_Ty>(_Ty &&)' being compiled
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\Ojjas\Desktop\SFML environment\Snake_game\Snake_game\Src\gameplay.cpp(45): message : see reference to function template instantiation 'void std::vector<int,std::allocator<int>>::emplace_back<float>(float &&)' being compiled
+  help_screen.cpp
+  main.cpp
+  mainmenu.cpp
+  snake.cpp
+  stateman.cpp
+  Generating Code...
+  Snake_game.vcxproj -> C:\Users\Ojjas\Desktop\SFML environment\Snake_game\Debug\Snake_game.exe
